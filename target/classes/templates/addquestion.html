@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Quiz Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Add Question</h1>
+        <hr>
+        <h2>Save Question</h2>
+
+        <form action="#" th:action="@{addQuestion}" th:object="${question}" method="POST">
+            <input type="text" th:field="*{questionTitle}" placeholder="Enter Question" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{option1}" placeholder="Option 1" class="form-control mb-4 col-4">
+
+            <input type="text" th:field="*{option2}" placeholder="option 2" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{option3}" placeholder="option 3" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{option4}" placeholder="option 4" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{rightAnswer}" placeholder="rightAnswer "class="form-control mb-4 col-4">
+            <input type="text" th:field="*{difficultylevel}" placeholder="difficultylevel" class="form-control mb-4 col-4">
+            <input type="text" th:field="*{category}" placeholder="category" class="form-control mb-4 col-4">
+            
+
+            <button type="submit" class="btn btn-info col-2"> Save Question</button>
+        </form>
+
+        <hr>
+
+        <a th:href="@{allQuestion}"> Back to Add Question</a>
+    </div>
+</body>
+
+</html>
